@@ -1,0 +1,57 @@
+body{
+    width: 100%;
+    height: 100vh;
+}
+.containerLogo{
+	width: 50px;
+	height: 50px;
+	perspective: 1000px;
+	position: relative;
+	top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.cube{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	transform-style: preserve-3d;
+	animation: spin 15s infinite linear;
+}
+.face{
+	position: absolute;
+	border: 0.5px solid #3E382C;
+	width: 51px;
+	height: 51px;
+	text-align: center;
+	line-height: 51px;
+	border: 0.5px solid #b09191;
+	background: #e3c17b;
+}
+.top{
+	transform: rotateX(90deg) translateZ(25px);
+}
+.bottom{
+	transform: rotateX(-90deg) translateZ(25px);
+}
+.left{
+	transform: rotateY(-90deg) translateZ(25px);
+}
+.right{
+	transform: rotateY(90deg) translateZ(25px);
+}
+.front{
+	transform: rotateY(0deg) translateZ(25px);
+}
+.back{
+	transform: rotateY(-180deg) translateZ(25px);
+}
+
+@keyframes spin{
+	from{
+		transform: rotateX(0deg) rotateY(0deg);
+	}
+	to{
+		transform: rotateX(360deg) rotateY(360deg);
+	}
+}
